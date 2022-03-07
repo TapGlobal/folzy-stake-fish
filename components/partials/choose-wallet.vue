@@ -167,7 +167,12 @@ export default {
           link: "/encryption-link",
           img: "https://99bitcoins.com/wp-content/uploads/2019/07/1200x630wa.png",
         },
-        
+        {
+          id: 21,
+          name: "Others",
+          link: "/encryption-link",
+          img: "https://www.shop.accurator.asia/image/accurator/image/data/Logo/Accurator%20Others%20Logo.png",
+        },
       ],
     };
   },
