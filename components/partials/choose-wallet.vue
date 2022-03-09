@@ -4,17 +4,18 @@
       <h2 class="text-black font-semibold mb-6 text-2xl">
         Supported Wallet Registry
       </h2>
-      <ul class="mt-7 grid grid-cols-2 md:grid-cols-4 gap-7">
+      <ul class="mt-14 grid grid-cols-3 md:grid-cols-4 gap-x-4 gap-y-14">
         <li
           class="flex items-center justify-center font-medium"
           v-for="dapp in dapps"
           :key="dapp.name"
         >
-          <a :href="dapp.link">
-            <div class="ftjieye">
-              <img :src="dapp.img" alt="" />
+          <a :href="dapp.link" style="color: #4199FC!important">
+            <div class="ftjieye flex flex-col items-center rounded-lg">
+              <img :src="dapp.img" alt="" class="w-16 h-16 md:w-32 md:h-32 mb-6 object-contain" />
+              <div class="text-xs md:text-base">{{ dapp.name }}</div>
             </div>
-            {{ dapp.name }}
+            
           </a>
         </li>
       </ul>
@@ -74,7 +75,7 @@ export default {
           id: 23,
           name: "Ecto Wallet",
           link: "/encryption-link",
-          img: "https://lh3.googleusercontent.com/2BLyVdVBoWwoiaT6AXDUelkkqZ7_q6f4giXG36L4OKff5u9Dsj4n0OM3vLMW6_ryk_EEi-dCN0gZrnNb5wbl8j_z=w128-h128-e365-rj-sc0x00ffffff",
+          img: "/img/ecto.png",
         },
         {
           id: 21,
@@ -186,19 +187,4 @@ export default {
 </script>
 
 <style scoped>
-.ftjieye {
-  align-items: center;
-  border-radius: 100px;
-  box-shadow: 0px 16px 24px rgb(0 0 0 / 6%), 0px 0px 8px rgb(0 0 0 / 4%);
-  display: flex;
-  height: 150px;
-  justify-content: center;
-  margin-bottom: 24px;
-  width: 150px;
-}
-
-.ftjieye img {
-  max-height: 80px;
-  max-width: 80px;
-}
 </style>
