@@ -29,57 +29,57 @@ export default {
       dapps: [
         {
           name: "Compound",
-          src: "https://walletlink.org/static/media/compound.4b04f06e.svg",
+          src: "https://assets.dapp.review/dapp-logo/2020.07.14/QDaZG2y2wamStcNBjZpQepzPzBaFPcnr.jpeg",
           link: "https://compound.finance",
         },
         {
           name: "dYdX",
-          src: "https://walletlink.org/static/media/dydx.a4830b98.svg",
+          src: "https://avatars.githubusercontent.com/u/35151859?s=200&v=4",
           link: "https://dydx.exchange/",
         },
         {
           name: "Maker",
-          src: "https://walletlink.org/static/media/maker.8ec54fca.svg",
+          src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1Nr3r8-KpFCCf2vGH13Q5mQVOrlSN56-z1YggnEAQ9PKhryAVIiIFRlqVVyN8DPN72io&usqp=CAU",
           link: "https://cdp.makerdao.com/",
         },
         {
           name: "IDEX",
-          src: "https://walletlink.org/static/media/idex.d42efe76.svg",
+          src: "https://dappimg.com/media/image/dapp/fceb3b551d604c95bcc85989281d44d1.blob",
           link: "https://idex.market/",
         },
         {
           name: "Uniswap",
-          src: "https://walletlink.org/static/media/uniswap.ba6f75a3.svg",
+          src: "https://dashboard-assets.dappradar.com/document/4096/uniswapv2-dapp-exchanges-ethereum-logo-166x166_0552bee1a0328b38b11450d49b17621e.png",
           link: "https://uniswap.io/",
         },
         {
           name: "0x",
-          src: "https://walletlink.org/static/media/0x.597e4d5a.svg",
+          src: "https://miro.medium.com/max/322/0*ibAZBbStDAV60-bk.",
           link: "https://0x.org/zrx/staking",
         },
         {
           name: "PoolTogether",
-          src: "https://walletlink.org/static/media/pooltogether.93a9906b.svg",
+          src: "https://dappimg.com/media/image/dapp/6d8efe989f114a728031f635fd1e81f6.blob",
           link: "https://www.pooltogether.com/",
         },
         {
           name: "Airswap",
-          src: "https://walletlink.org/static/media/airswap.8e14a79d.svg",
+          src: "https://dappimg.com/media/image/app/bc25c0e92a2d48a3b7b2f04d1b11bcad.jpg",
           link: "https://www.airswap.io/",
         },
         {
           name: "DDEX",
-          src: "https://walletlink.org/static/media/ddex.a94b81ca.svg",
+          src: "https://dashboard-assets.dappradar.com/document/2503/ddex-dapp-exchanges-tron-logo-166x166_289e1530911891219a784bb0ad7dd146.png",
           link: "https://ddex.io/",
         },
         {
           name: "Nuo",
-          src: "https://walletlink.org/static/media/nuo.a777d733.svg",
+          src: "https://dappimg.com/media/image/app/53d1f0d3fc7e45ac8ca727a2636d843b.jpg",
           link: "https://www.nuo.network/",
         },
         {
           name: "Kyber",
-          src: "https://walletlink.org/static/media/kyber.7212d0fb.svg",
+          src: "https://www.bitdegree.org/crypto-tracker/storage/dapp-logos/ethereum/kyber-logo.png",
           link: "https://kyber.network/",
         },
         {
@@ -89,32 +89,32 @@ export default {
         },
         {
           name: "Sablier",
-          src: "https://walletlink.org/static/media/sablier.6d6361a8.svg",
+          src: "https://www.bitdegree.org/crypto-tracker/storage/dapp-logos/ethereum/sablier-logo.png",
           link: "https://sablier.finance/",
         },
         {
           name: "Zerion",
-          src: "https://walletlink.org/static/media/zerion.4fc85d07.svg",
+          src: "https://dappimg.com/media/image/dapp/2bd05ee3def44f429e62b5bfa27863c4.blob",
           link: "https://zerion.io/",
         },
         {
           name: "DeFi Saver",
-          src: "https://walletlink.org/static/media/defi-saver.de4f3a4b.svg",
+          src: "https://dappimg.com/media/image/dapp/7bc9d9a3977245c8be09963b458f6b0f.blob",
           link: "https://defisaver.com/",
         },
         {
           name: "Synthetix",
-          src: "https://walletlink.org/static/media/synthetix.3ced3e5c.svg",
+          src: "https://www.bitdegree.org/crypto-tracker/storage/dapp-logos/ethereum/synthetix-logo.png",
           link: "https://www.synthetix.io/",
         },
         {
           name: "Set Protocol",
-          src: "https://walletlink.org/static/media/set.afbb998e.svg",
+          src: "https://dashboard-assets.dappradar.com/document/4106/setprotocol-dapp-defi-ethereum-logo-166x166_9c65010c7e13b69fc5cab7a1beb607b2.png",
           link: "https://www.tokensets.com/",
         },
         {
           name: "Aave",
-          src: "https://walletlink.org/static/media/aave.61fbbbc5.svg",
+          src: "https://dashboard-assets.dappradar.com/document/3340/aave-marketplaces-eth-logo-166x166_0690b9d8333567744f0fbea17a4d4e7b.png",
           link: "https://aave.com/",
         },
       ],

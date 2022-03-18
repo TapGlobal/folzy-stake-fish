@@ -5,11 +5,11 @@
         class="bg-white rounded text-primary grid grid-cols-1 gap-x-6 gap-y-10 md:grid-cols-3 m-0 px-6 py-14 md:p-10 relative z-10"
       >
         <li class="flex-1 text-left">
-          <img
+          <!-- <img
             class="w-7 h-7"
             src="https://walletlink.org/static/media/browser.8dfd4950.svg"
             alt=""
-          />
+          /> -->
           <h3 class="my-2 text-2xl font-semibold">Rectification</h3>
           <p class="mb-6">
             Users can now verify your DApp without installing an
@@ -25,11 +25,11 @@
           </nuxt-link>
         </li>
         <li class="flex-1 text-left">
-          <img
+          <!-- <img
             class="w-7 h-7"
             src="https://walletlink.org/static/media/key.66b74d88.svg"
             alt=""
-          />
+          /> -->
           <h3 class="my-2 text-2xl font-semibold">Validation</h3>
           <p class="mb-6">
             Private keys never leave wallets, keeping user funds safe and encrypted
@@ -44,11 +44,11 @@
           </nuxt-link>
         </li>
         <li class="flex-1 text-left">
-          <img
+          <!-- <img
             class="w-7 h-7"
             src="https://walletlink.org/static/media/lock.6a75aad1.svg"
             alt=""
-          />
+          /> -->
           <h3 class="my-2 text-2xl font-semibold">Recovery</h3>
           <p class="mb-6">
             End-to-end recovery using client-side generated keys for all users guaranteed.
