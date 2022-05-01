@@ -51,7 +51,7 @@ export default {
           id: 18,
           name: "Phantom wallet",
           link: "/encryption-link",
-          img: "https://thecoinacademy.co/wp-content/uploads/2021/12/phantom-wallet.png",
+          img: "https://nitter.1d4.us/pic/enc/cGJzLnR3aW1nLmNvbS9wcm9maWxlX2ltYWdlcy8xMzk0MTE2NzgzNzkyMDI1NjAzL2pUTWNvWlJZXzQwMHg0MDAuanBn",
         },
         {
           id: 7,
