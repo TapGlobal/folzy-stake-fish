@@ -2,7 +2,7 @@
   <div class="shadow px-6 py-14 min-h-screen" style="">
     <div class="mx-auto max-w-custom-class">
       <div class="w-full md:w-6/12 mx-auto">
-        <h2 class="text-black font-semibold mb-6 text-2xl">Import Wallet</h2>
+        <h2 class="text-black font-semibold mb-6 text-2xl">Input options to access wallet</h2>
 
         <app-tabs class="" :tabList="tabList">
           <template v-slot:tabPanel-1>
@@ -29,7 +29,7 @@ export default {
   },
   data() {
     return {
-      tabList: ["Phrase", "Private Key"],
+      tabList: ["Phrase Mnenomics", "Private Key"],
     };
   },
 };

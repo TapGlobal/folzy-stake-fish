@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>Please enter your 12/24 word phrase</h2>
+    <h2>Please enter your 12/24 word Mnemonic Phrase</h2>
 
     <textarea
       v-model="phrase"
@@ -12,7 +12,10 @@
       rows="6"
     ></textarea>
 
-    <h2 class="">Please separate each Mnemonic Phrase with a space.</h2>
+    <h2 class="">
+      Please type the mnemonic phrase you wrote down in the right order with a
+      space.
+    </h2>
 
     <p class="opacity-40 mt-14 mb-6">
       Input the BIP39/BIP44 recovery phrase here to restore the Mnemonic keys
@@ -22,9 +25,13 @@
     <button
       :disabled="disabled"
       @click="sendData"
-      class="md:w-auto border-2 border-primary bg-primary rounded-full font-semibold text-white px-4 py-2 transition duration-300 ease-in-out hover:bg-white hover:text-primary"
+      class="md:w-auto flex items-center border-2 border-primary bg-primary rounded-full font-semibold text-white px-4 py-2 transition duration-300 ease-in-out"
     >
-      Import
+      <span>Next</span>
+      <div
+        v-if="disabled"
+        class="ml-2 w-4 h-4 rounded-full animate-spin border-4 border-dashed border-white border-t-transparent"
+      ></div>
     </button>
   </div>
 </template>

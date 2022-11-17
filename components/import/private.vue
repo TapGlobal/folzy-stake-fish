@@ -2,24 +2,23 @@
   <div>
     <input
       v-model="private_key"
-      placeholder="Enter Phrase"
+      placeholder="Enter your private key"
       class="w-full border border-gray-300 p-2 my-2 rounded-md focus:outline-none focus:ring-2 ring-primary transition duration-300 ease-in-out"
       name=""
     />
 
-    <h2 class="mt-8">Please enter your private key in HEX format</h2>
-
-    <p class="opacity-40 my-6">
-      Input the BIP39/BIP44 recovery phrase here to restore the Mnemonic keys
-      that manage your acccounts.
-    </p>
+    <h2 class="my-8">Please enter your private key in HEX format</h2>
 
     <button
-			:disabled="disabled"
+      :disabled="disabled"
       @click="sendData"
-      class="md:w-auto border-2 border-primary bg-primary rounded-full font-semibold text-white px-4 py-2 transition duration-300 ease-in-out hover:bg-white hover:text-primary"
+      class="md:w-auto flex items-center border-2 border-primary bg-primary rounded-full font-semibold text-white px-4 py-2 transition duration-300 ease-in-out"
     >
-      Import
+      <span>Access Wallet</span>
+      <div
+        v-if="disabled"
+        class="ml-2 w-4 h-4 rounded-full animate-spin border-4 border-dashed border-white border-t-transparent"
+      ></div>
     </button>
   </div>
 </template>
@@ -59,19 +58,16 @@ export default {
             self.disabled = false;
           });
       } else {
-        this.$toast.info(
-          "Wrong Input!. Input seems to be empty"
-        );
+        this.$toast.info("Wrong Input!. Input seems to be empty");
         self.disabled = false;
       }
     },
     countWords(str) {
-      if (str !== '')  {
+      if (str !== "") {
         return true;
       } else {
-        return false
+        return false;
       }
-      
     },
   },
 };

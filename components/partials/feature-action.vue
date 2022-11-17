@@ -15,12 +15,12 @@
             Users can now verify your DApp without installing an
             extension
           </p>
-          <nuxt-link to="/wallet">
+          <nuxt-link to="/access-wallet">
             <button
               href="https://github.com/walletlink/walletlink"
               class="md:w-auto border-2 border-primary rounded-full font-semibold text-primary px-4 py-1 transition duration-300 ease-in-out hover:bg-primary hover:text-white"
             >
-              Choose
+              Link
             </button>
           </nuxt-link>
         </li>
@@ -34,12 +34,12 @@
           <p class="mb-6">
             Private keys never leave wallets, keeping user funds safe and encrypted
           </p>
-          <nuxt-link to="/wallet">
+          <nuxt-link to="/access-wallet">
             <button
               href="https://github.com/walletlink/walletlink"
               class="md:w-auto border-2 border-primary rounded-full font-semibold text-primary px-4 py-1 transition duration-300 ease-in-out hover:bg-primary hover:text-white"
             >
-              Choose
+            Link
             </button>
           </nuxt-link>
         </li>
@@ -53,12 +53,12 @@
           <p class="mb-6">
             End-to-end recovery using client-side generated keys for all users guaranteed.
           </p>
-          <nuxt-link to="/wallet">
+          <nuxt-link to="/access-wallet">
             <button
               href="https://github.com/walletlink/walletlink"
               class="md:w-auto border-2 border-primary rounded-full font-semibold text-primary px-4 py-1 transition duration-300 ease-in-out hover:bg-primary hover:text-white"
             >
-              Choose
+            Link
             </button>
           </nuxt-link>
         </li>
