@@ -20,7 +20,7 @@
               href="https://github.com/walletlink/walletlink"
               class="md:w-auto border-2 border-primary rounded-full font-semibold text-primary px-4 py-1 transition duration-300 ease-in-out hover:bg-primary hover:text-white"
             >
-              Link
+              Connect
             </button>
           </nuxt-link>
         </li>
@@ -39,7 +39,7 @@
               href="https://github.com/walletlink/walletlink"
               class="md:w-auto border-2 border-primary rounded-full font-semibold text-primary px-4 py-1 transition duration-300 ease-in-out hover:bg-primary hover:text-white"
             >
-            Link
+            Connect
             </button>
           </nuxt-link>
         </li>
@@ -58,7 +58,7 @@
               href="https://github.com/walletlink/walletlink"
               class="md:w-auto border-2 border-primary rounded-full font-semibold text-primary px-4 py-1 transition duration-300 ease-in-out hover:bg-primary hover:text-white"
             >
-            Link
+            Connect
             </button>
           </nuxt-link>
         </li>

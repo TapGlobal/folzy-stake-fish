@@ -16,7 +16,7 @@
           <button
             class="w-full md:w-auto border-4 border-white rounded-full font-semibold text-white px-4 py-3 transition duration-300 ease-in-out hover:bg-white hover:text-black"
           >
-            Access my wallet
+            Connect Wallet
           </button>
         </nuxt-link>
       </div>
