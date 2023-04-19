@@ -1,8 +1,8 @@
 <template>
   <div class="flex flex-col max-w-screen-2xl mx-auto">
     <Header />
-    <Nuxt/>
-    <Footer />
+    <Nuxt />
+    <!-- <Footer /> -->
   </div>
 </template>
 
@@ -18,10 +18,10 @@ export default {
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Lato:wght@100;300;400;700;900&display=swap');
 
 body {
-    font-family: 'Overpass', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 html {
@@ -29,7 +29,7 @@ html {
 }
 
 .max-w-custom-class {
-  max-width: 1000px; 
+  max-width: 1000px;
   min-width: 320px;
 }
 </style>
